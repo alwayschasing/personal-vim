@@ -418,3 +418,24 @@ func SetTitle()
     endif
 endfunc
 autocmd BufNewFile * normal G
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'Yggdroot/indentLine'
+" 括号配对
+Plugin 'Auto-Pairs'
+Plugin 'python-imports.vim'
+Plugin 'last_edit_marker.vim'
+Plugin 'SQLComplete.vim'
+Plugin 'The-NERD-Commenter'
+call vundle#end()
+filetype plugin indent on
+
+let g:indentLine_char = '┊'
+let NERDTreeIgnore=['\.pyc']
