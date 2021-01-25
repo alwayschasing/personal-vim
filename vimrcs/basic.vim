@@ -376,6 +376,13 @@ function! VisualSelection(direction, extra_filter) range
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => completeing
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set completeopt=longest,preview,menu
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => other settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd
