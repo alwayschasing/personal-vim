@@ -265,6 +265,7 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap VIM 0 to first non-blank character
 map 0 ^
+imap <C-j> <ESC>
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
@@ -426,11 +427,13 @@ func SetTitle()
 endfunc
 autocmd BufNewFile * normal G
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -441,8 +444,15 @@ Plugin 'python-imports.vim'
 Plugin 'last_edit_marker.vim'
 Plugin 'SQLComplete.vim'
 Plugin 'The-NERD-Commenter'
+Plugin 'The-NERD-Tree'
 call vundle#end()
 filetype plugin indent on
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => plugin setting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_char = '┊'
 let NERDTreeIgnore=['\.pyc']
+map <F3> :NERDTreeToggle<CR>
+imap <F3> <ESC> :NERDTreeToggle<CR>
