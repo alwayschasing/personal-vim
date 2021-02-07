@@ -431,7 +431,7 @@ autocmd BufNewFile * normal G
 " => plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
-filetype off
+"filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
@@ -447,6 +447,7 @@ Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-Tree'
 call vundle#end()
 filetype plugin indent on
+filetype plugin on
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
